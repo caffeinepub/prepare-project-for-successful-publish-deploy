@@ -1,0 +1,302 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Premium Indian Cafe QR Menu (Mobile-First Digital Book UI)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement a premium, distinctive mobile-first menu UI with warm minimalist Indian hospitality aesthetics (English-only).",
+      "acceptanceCriteria": [
+        "The UI looks premium and distinctive (not a default template) with warm neutrals, generous whitespace, subtle cultural touches, and polished details (shadows/borders/rounded corners).",
+        "The layout is optimized for 375–428px widths and does not produce horizontal scrolling at those sizes.",
+        "All user-facing text is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell that renders the digital-book menu experience (header + animated section pages + footer) with a mobile-first layout and no horizontal overflow."
+        },
+        {
+          "path": "frontend/src/components/brand/BrandHeader.tsx",
+          "operation": "create",
+          "description": "Create a minimal premium header component (cafe name + tagline) with warm, modern styling and restrained visual hierarchy."
+        },
+        {
+          "path": "frontend/src/components/brand/BrandFooter.tsx",
+          "operation": "create",
+          "description": "Create a minimal footer component with a short premium note (English-only), consistent spacing, and subtle separators."
+        },
+        {
+          "path": "frontend/src/components/layout/AppShell.tsx",
+          "operation": "create",
+          "description": "Create a layout wrapper to enforce consistent spacing rhythm, max width for mobile, and safe-area padding (top/bottom) without introducing horizontal scroll."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply a single coherent theme using warm neutral backgrounds and #D97706 as the sole accent color across the UI.",
+      "acceptanceCriteria": [
+        "Accent color usage is consistent across the UI (e.g., prices, highlights, badges) and does not introduce additional competing accent colors.",
+        "Background uses warm neutrals; cards use pure/subtle warm white; text uses deep charcoal/black with strong contrast.",
+        "No purple gradient-on-white look is used."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create the global Tailwind entry stylesheet (imported by main.tsx) defining warm-neutral CSS variables and setting #D97706 as the single accent via theme variables; ensure high-contrast foreground text and no purple gradient styling."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens for the cafe theme (e.g., additional semantic colors or shadows if needed) while keeping #D97706 as the only accent color and preserving mobile-first spacing consistency."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuItemCard.tsx",
+          "operation": "create",
+          "description": "Implement card-level styling that consistently uses the warm theme tokens and the single accent color (prices/highlights) without introducing competing accents."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement typography with exactly two Google Fonts (serif headings + sans body) and a clear mobile hierarchy for titles, items, prices, and descriptions.",
+      "acceptanceCriteria": [
+        "Exactly 2 Google Fonts are used: serif for headings and sans-serif for body.",
+        "Menu item names render at ~1.2–1.4rem with medium-bold weight; prices are bold and use the accent color; descriptions are ~0.9–1rem and readable.",
+        "Typography spacing (line-height, margins) supports quick scanning on mobile."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add exactly two Google Font imports (one elegant serif for headings and one clean sans-serif for body), and ensure they are applied globally via CSS variables/classes."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define font-family stacks for headings (serif) and body (sans), plus consistent type scale and line-height for section titles, item names, prices, and descriptions optimized for 375–428px screens."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuSectionPage.tsx",
+          "operation": "create",
+          "description": "Apply the defined typography hierarchy in a section page: section title heading, item name sizing/weight, price styling (bold + accent), and description sizing/spacing for scanability."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create seven menu sections as separate navigable pages with realistic Indian items, mostly vegetarian, priced ₹30–₹400, with appetizing one-line descriptions.",
+      "acceptanceCriteria": [
+        "All seven sections exist and each is its own navigable page in the digital-book experience.",
+        "Each section has ≥3 items (preferably 4) with authentic Indian naming and one-line appetizing descriptions.",
+        "Prices are displayed in rupees (₹) and fall within ₹30–₹400."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/menu/menuData.ts",
+          "operation": "create",
+          "description": "Add static menu data defining the 7 sections (Hot Beverages, Cold Beverages, Breakfast & Snacks, Street Food, Main Course, Breads, Desserts) and 3–4 realistic items each (authentic Indian names, mostly vegetarian, ₹30–₹400, English descriptions), including per-item metadata (veg/non-veg, badges, image URL)."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuBook.tsx",
+          "operation": "create",
+          "description": "Render the seven sections as separate 'pages' in the digital-book experience, driven by the static menu data."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire MenuBook into the app so all seven sections are reachable as distinct pages in the horizontal sliding experience."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement menu item cards with circular images/placeholders (95–110px, 3px border, subtle shadow) and veg/non-veg indicator at top-left of the image; generous spacing/dividers.",
+      "acceptanceCriteria": [
+        "Every item shows a circular image or circular placeholder at 95–110px with a visible 3px border and subtle shadow.",
+        "Veg indicator uses #16A34A; Non-veg indicator uses #DC2626; indicator is a small square with a dot, positioned top-left of the image area.",
+        "Cards have generous whitespace and consistent rhythm; items are separated by ~30–40px spacing (or equivalent)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/menu/MenuItemCard.tsx",
+          "operation": "modify",
+          "description": "Implement the specified circular image frame (95–110px diameter, 3px border, subtle shadow) with a top-left veg/non-veg indicator (square with dot; veg #16A34A, non-veg #DC2626), plus generous padding and item-to-item spacing/dividers."
+        },
+        {
+          "path": "frontend/src/components/menu/VegNonVegMark.tsx",
+          "operation": "create",
+          "description": "Create a dedicated veg/non-veg indicator component to guarantee consistent sizing, positioning (top-left over image), and exact color usage."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuSectionPage.tsx",
+          "operation": "modify",
+          "description": "Ensure section pages lay out item cards with a consistent 30–40px vertical rhythm (or equivalent) and subtle separation lines/spacing without clutter."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add optional badges: Bestseller, Chef's Special, and Spicy (🌶️) with compact consistent styling and no clutter.",
+      "acceptanceCriteria": [
+        "Some items across the menu demonstrate each badge type (Bestseller, Chef's Special, Spicy 🌶️).",
+        "Badges are visually consistent, small, and do not reduce readability of name/price/description on mobile."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/menu/menuData.ts",
+          "operation": "modify",
+          "description": "Mark a subset of items across multiple sections with badges (Bestseller, Chef's Special, Spicy 🌶️) and optional spice-level metadata to demonstrate each badge type without overuse."
+        },
+        {
+          "path": "frontend/src/components/menu/ItemBadges.tsx",
+          "operation": "create",
+          "description": "Create a compact badge row component for item cards that renders Bestseller, Chef's Special, and Spicy (🌶️) consistently in the theme; if using shadcn-ui Badge, verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuItemCard.tsx",
+          "operation": "modify",
+          "description": "Wire ItemBadges into each item card in a way that preserves mobile readability and does not crowd the name/price/description."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build the multi-page digital-book interaction with horizontal slide transitions and subtle entry animations; keep scrolling smooth and stable.",
+      "acceptanceCriteria": [
+        "Switching between sections animates with a smooth horizontal slide (booklet-like), not an abrupt jump.",
+        "Within a page, content reveals use subtle fade-in/slide-up animations and does not feel distracting.",
+        "Scrolling inside a section page is smooth and remains stable during page transitions."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/menu/MenuBook.tsx",
+          "operation": "modify",
+          "description": "Implement horizontal sliding page transitions between sections (booklet-like) with stable scroll handling per page and smooth gesture/tap navigation."
+        },
+        {
+          "path": "frontend/src/components/motion/RevealOnEnter.tsx",
+          "operation": "create",
+          "description": "Create a lightweight reveal animation wrapper (subtle fade/slide-up) for page-entry content, designed to be unobtrusive and compatible with reduced-motion settings."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuSectionPage.tsx",
+          "operation": "modify",
+          "description": "Apply subtle entry reveals to key content blocks (title + list/cards) and ensure internal scrolling remains smooth during/after page transitions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Provide compact, always-discoverable navigation controls (next/prev and/or pager) that do not cover the menu and work well on small screens.",
+      "acceptanceCriteria": [
+        "Navigation controls are always discoverable but occupy minimal screen real estate and do not block key content.",
+        "Users can navigate forward/back between pages with taps; controls have accessible touch targets on mobile.",
+        "Current section/page is indicated (e.g., dots or small label) without a large overlay."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/menu/MenuPager.tsx",
+          "operation": "create",
+          "description": "Create compact navigation controls (prev/next + small pager indicator such as dots/label) optimized for mobile touch targets; if using shadcn-ui Button, verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuBook.tsx",
+          "operation": "modify",
+          "description": "Wire MenuPager into the digital-book UI so navigation is always available, minimal, non-blocking, and indicates the current section/page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Use high-quality Unsplash image URLs with optimization params for fast loading; provide a tasteful circular placeholder and avoid layout shift.",
+      "acceptanceCriteria": [
+        "Menu items display images from Unsplash URLs that include optimization parameters (w/h/fit crop).",
+        "If an image fails to load or is not provided, a visually consistent circular placeholder is shown.",
+        "The page remains performant and visually stable (no layout shift when images load)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/menu/menuData.ts",
+          "operation": "modify",
+          "description": "Populate item images with direct Unsplash URLs that include optimization parameters (e.g., w=400&h=400&fit=crop) and ensure coverage across the menu while allowing some items to demonstrate placeholder fallback."
+        },
+        {
+          "path": "frontend/src/components/media/CircularImage.tsx",
+          "operation": "create",
+          "description": "Create a circular image component that sets explicit width/height for stability, handles load errors, and renders a themed circular placeholder when missing/failing."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuItemCard.tsx",
+          "operation": "modify",
+          "description": "Use CircularImage in item cards to ensure consistent circular cropping, fast-loading optimized images, and no layout shift."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add a minimal themed header (cafe name + tagline) and footer note; keep unobtrusive, including if sticky.",
+      "acceptanceCriteria": [
+        "Header shows cafe name and tagline and does not dominate the viewport on mobile.",
+        "Footer shows a short, tasteful line consistent with the premium tone.",
+        "If the header is sticky, it remains minimal and does not overlap core content during scroll or page transitions."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/brand/BrandHeader.tsx",
+          "operation": "modify",
+          "description": "Ensure header includes cafe name + tagline with minimal height and optional sticky behavior that remains unobtrusive and does not overlap content during transitions/scroll."
+        },
+        {
+          "path": "frontend/src/components/brand/BrandFooter.tsx",
+          "operation": "modify",
+          "description": "Ensure footer renders a small premium note (e.g., “Freshly made with love” or “Scan to order.”) consistent with the theme."
+        },
+        {
+          "path": "frontend/src/components/layout/AppShell.tsx",
+          "operation": "modify",
+          "description": "Wire header and footer into the overall layout with safe spacing so they never cover key menu content on small screens."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Ensure accessibility and mobile quality: semantic structure, contrast, readable type, no horizontal scroll, and reduced-motion support.",
+      "acceptanceCriteria": [
+        "All sections use a clear heading hierarchy and accessible labels for navigation controls.",
+        "On 375–428px widths, there is no horizontal scrolling and text remains readable.",
+        "Animations are subtle and a reduced-motion preference disables or significantly reduces motion effects."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/menu/MenuSectionPage.tsx",
+          "operation": "modify",
+          "description": "Use semantic structure for section pages (clear heading hierarchy, section landmarks where appropriate) and ensure readable font sizes and contrast on mobile."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuPager.tsx",
+          "operation": "modify",
+          "description": "Add accessible labels/aria attributes for navigation controls and ensure touch targets meet mobile usability while remaining visually minimal."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add reduced-motion CSS handling (prefers-reduced-motion) to disable or significantly reduce transition/animation intensity, and enforce overflow-x hidden safeguards to prevent horizontal scrolling at 375–428px."
+        },
+        {
+          "path": "frontend/src/components/motion/usePrefersReducedMotion.ts",
+          "operation": "create",
+          "description": "Create a small hook to detect reduced-motion preference and let MenuBook/RevealOnEnter reduce or disable motion accordingly."
+        },
+        {
+          "path": "frontend/src/components/menu/MenuBook.tsx",
+          "operation": "modify",
+          "description": "Respect reduced-motion preference by reducing/disabling slide and reveal transitions, while keeping navigation functional and scroll stable."
+        }
+      ]
+    }
+  ]
+}

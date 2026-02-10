@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Warm neutral backgrounds */
+        --background: 0.97 0.015 45;
+        --foreground: 0.20 0.01 30;
+        
+        /* Card backgrounds - pure warm white */
+        --card: 0.99 0.005 45;
+        --card-foreground: 0.20 0.01 30;
+        
+        /* Popover */
+        --popover: 0.99 0.005 45;
+        --popover-foreground: 0.20 0.01 30;
+        
+        /* Primary - deep charcoal */
+        --primary: 0.25 0.01 30;
+        --primary-foreground: 0.99 0.005 45;
+        
+        /* Secondary - warm neutral */
+        --secondary: 0.94 0.015 45;
+        --secondary-foreground: 0.25 0.01 30;
+        
+        /* Muted */
+        --muted: 0.94 0.015 45;
+        --muted-foreground: 0.50 0.01 30;
+        
+        /* Accent - Saffron Orange #D97706 */
+        --accent: 0.65 0.15 45;
+        --accent-foreground: 0.99 0.005 45;
+        
+        /* Destructive - for non-veg indicator */
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.99 0.005 45;
+        
+        /* Borders */
+        --border: 0.88 0.015 45;
+        --input: 0.88 0.015 45;
+        --ring: 0.65 0.15 45;
+        
+        /* Success - for veg indicator */
+        --success: 0.60 0.18 145;
+        
+        /* Chart colors */
+        --chart-1: 0.65 0.15 45;
+        --chart-2: 0.60 0.18 145;
+        --chart-3: 0.50 0.12 200;
+        --chart-4: 0.70 0.20 30;
+        --chart-5: 0.55 0.15 80;
+    }
+
+    .dark {
+        --background: 0.20 0.01 30;
+        --foreground: 0.97 0.015 45;
+        --card: 0.25 0.01 30;
+        --card-foreground: 0.97 0.015 45;
+        --popover: 0.25 0.01 30;
+        --popover-foreground: 0.97 0.015 45;
+        --primary: 0.94 0.015 45;
+        --primary-foreground: 0.25 0.01 30;
+        --secondary: 0.30 0.01 30;
+        --secondary-foreground: 0.97 0.015 45;
+        --muted: 0.30 0.01 30;
+        --muted-foreground: 0.65 0.01 30;
+        --accent: 0.65 0.15 45;
+        --accent-foreground: 0.99 0.005 45;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.25 0.01 30;
+        --border: 0.35 0.01 30;
+        --input: 0.35 0.01 30;
+        --ring: 0.65 0.15 45;
+        --success: 0.65 0.18 145;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 600;
+    }
+}
+
+@layer utilities {
+    .font-heading {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    
+    .font-body {
+        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    /* Smooth scrolling */
+    .smooth-scroll {
+        scroll-behavior: smooth;
+    }
+    
+    /* Prevent horizontal scroll */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInFromRight 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInFromLeft 0.4s ease-out;
+}

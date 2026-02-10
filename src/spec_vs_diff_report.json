@@ -1,0 +1,104 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-08T11:56:18.345Z",
+  "summary": "Diff adds a React+TS+Tailwind mobile menu experience with header/footer, paged section navigation, circular images with veg/non-veg mark, badges, animations, and warm-neutral theming variables. However, some specified requirements are either not evidenced (full 7-section content) or not matched exactly (Google Fonts import and spicy 🌶️ badge), and there are a few unrequested additions (Internet Identity wiring, third-party link/copyright, extra theme color tokens).",
+  "missing_requirements": [
+    {
+      "id": "REQ-3",
+      "requirement": "Import exactly two complementary Google Fonts (serif for headings, sans-serif for body) and apply them consistently.",
+      "reason": "CSS sets font-family to \"DM Sans\" and \"Cormorant Garamond\" but the diff does not show any actual Google Fonts import (e.g., @import url(...) in CSS or <link> in HTML). Without the import, the fonts may not load as specified.",
+      "evidence": [
+        "frontend/src/index.css"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Create 7 menu sections (Hot Beverages, Cold Beverages, Breakfast & Snacks, Street Food, Main Course, Breads, Desserts) as separate pages, each with ≥3–4 realistic Indian items with ₹30–₹400 pricing.",
+      "reason": "The provided menu data file is truncated and only clearly shows the first 3 sections; there is no visible evidence in the diff summary that Street Food, Main Course, Breads, and Desserts exist and meet the item-count/pricing constraints.",
+      "evidence": [
+        "frontend/src/features/menu/menuData.ts (truncated)"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Include a \"Spicy\" badge using a 🌶️ marker and spice-level indication where relevant.",
+      "reason": "The spicy indicator uses a Flame icon and 'Mild/Medium/Hot' text, but does not show the required 🌶️ marker. Also, the spicy badge styling uses destructive (red) tokens rather than the specified spicy 🌶️ marker requirement.",
+      "evidence": [
+        "frontend/src/components/menu/ItemBadges.tsx"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Use exactly one accent color (#D97706) as the sole accent color across the UI (no competing accent colors).",
+      "reason": "Theme tokens include multiple additional \"chart-*\" color variables and the spicy badge uses destructive (red) styling, which may introduce competing accent colors beyond the single saffron accent requirement.",
+      "evidence": [
+        "frontend/src/index.css",
+        "frontend/src/components/menu/ItemBadges.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Veg indicator uses #16A34A; Non-veg indicator uses #DC2626 (small square with colored dot, top-left of image).",
+      "reason": "The veg/non-veg mark uses Tailwind tokens 'bg-success'/'bg-destructive' (from CSS variables) rather than explicit #16A34A and #DC2626, so exact color compliance is not evidenced.",
+      "evidence": [
+        "frontend/src/components/menu/VegNonVegMark.tsx",
+        "frontend/src/index.css"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity provider/hooks and actor creation wiring added (authentication + actor management) despite the build request being purely a QR menu UI with no auth requirement.",
+      "reason": "BuildRequest does not request login/auth flows or actor hooks for the menu UI; these additions appear unrelated to the specified frontend menu experience.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Footer includes third-party link to caffeine.ai and a © 2026 copyright line.",
+      "reason": "BuildRequest only asks for a minimal footer note like “Freshly made with love” or “Scan to order.” The third-party attribution link and copyright line were not requested.",
+      "evidence": [
+        "frontend/src/components/brand/BrandFooter.tsx"
+      ]
+    },
+    {
+      "description": "Added extra theme color tokens for charts (chart-1..chart-5).",
+      "reason": "BuildRequest does not request chart theming, and these additional colors may conflict with the single-accent-color constraint.",
+      "evidence": [
+        "frontend/src/index.css"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/brand/BrandFooter.tsx",
+    "frontend/src/components/brand/BrandHeader.tsx",
+    "frontend/src/components/layout/AppShell.tsx",
+    "frontend/src/components/media/CircularImage.tsx",
+    "frontend/src/components/menu/ItemBadges.tsx",
+    "frontend/src/components/menu/MenuBook.tsx",
+    "frontend/src/components/menu/MenuItemCard.tsx",
+    "frontend/src/components/menu/MenuPager.tsx",
+    "frontend/src/components/menu/MenuSectionPage.tsx",
+    "frontend/src/components/menu/VegNonVegMark.tsx",
+    "frontend/src/components/motion/RevealOnEnter.tsx",
+    "frontend/src/components/motion/usePrefersReducedMotion.ts",
+    "frontend/src/features/menu/menuData.ts",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

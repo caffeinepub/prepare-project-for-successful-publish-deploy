@@ -1,0 +1,255 @@
+{
+  "kind": "build_request",
+  "title": "Premium Indian Cafe QR Menu — Mobile-First Digital Book with Sliding Section Pages",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement a premium, production-ready mobile-first menu UI for an Indian cafe, matching the requested modern minimalist, warm Indian hospitality aesthetic (inviting, clean, elegant, Instagram-worthy) and avoiding generic template styling.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a premium, production-ready QR code menu website for an Indian cafe with these specifications:",
+          "Style: Modern minimalist with warm, sophisticated Indian hospitality vibes",
+          "NOT generic AI design - make it distinctive and memorable"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The UI looks premium and distinctive (not a default template) with warm neutrals, generous whitespace, subtle cultural touches, and polished details (shadows/borders/rounded corners).",
+        "The layout is optimized for 375–428px widths and does not produce horizontal scrolling at those sizes.",
+        "All user-facing text is in English."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Apply a single coherent visual theme across the entire site (colors, typography, spacing rhythm, component styling) using warm neutral backgrounds (cream/beige/off-white), high-contrast deep charcoal/black text, and exactly one accent color chosen from the provided options; use #D97706 (saffron orange) as the sole accent color.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "COLOR PALETTE:",
+          "Accent color: [Choose ONE: Saffron orange #D97706 / Deep green #059669 / Royal purple #7C3AED / Terracotta #C2410C]",
+          "AVOID: - Purple gradients on white backgrounds"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Accent color usage is consistent across the UI (e.g., prices, highlights, badges) and does not introduce additional competing accent colors.",
+        "Background uses warm neutrals; cards use pure/subtle warm white; text uses deep charcoal/black with strong contrast.",
+        "No purple gradient-on-white look is used."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement typography per spec: import two complementary Google Fonts (one elegant serif for headings; one clean sans-serif for body) and enforce a clear hierarchy for section titles, item names, prices, and descriptions.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "TYPOGRAPHY:",
+          "Heading font: Elegant serif (Newsreader, Crimson Text, Playfair Display, Cormorant Garamond)",
+          "Body font: Clean, modern sans-serif (DM Sans, Inter, Nunito Sans, Lato)",
+          "Menu item names: 1.2-1.4rem, medium-bold weight",
+          "Prices: Bold, accent color, clearly visible",
+          "Descriptions: 0.9-1rem, comfortable reading size"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Exactly 2 Google Fonts are used: serif for headings and sans-serif for body.",
+        "Menu item names render at ~1.2–1.4rem with medium-bold weight; prices are bold and use the accent color; descriptions are ~0.9–1rem and readable.",
+        "Typography spacing (line-height, margins) supports quick scanning on mobile."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create the menu content structure with these sections as separate pages: Hot Beverages, Cold Beverages, Breakfast & Snacks, Street Food, Main Course, Breads, and Desserts (desserts included). Each section must include at least 3–4 realistic items with authentic Indian names, vegetarian-friendly majority, and pricing in ₹30–₹400.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2",
+          "msg-6"
+        ],
+        "quotes": [
+          "MENU STRUCTURE: Include these sections:",
+          "Hot Beverages (Chai varieties, Coffee)",
+          "Cold Beverages (Lassi, Shakes, Fresh Juice)",
+          "Breakfast & Snacks (Samosa, Vada Pav, Poha, Upma)",
+          "Street Food (Pav Bhaji, Dosa, Chaat items)",
+          "Main Course (Paneer dishes, Dal, Biryani, Curries)",
+          "Breads (Naan, Roti, Paratha)",
+          "Desserts (Optional: Gulab Jamun, Kulfi, etc.)",
+          "yes = 1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All seven sections exist and each is its own navigable page in the digital-book experience.",
+        "Each section has ≥3 items (preferably 4) with authentic Indian naming and one-line appetizing descriptions.",
+        "Prices are displayed in rupees (₹) and fall within ₹30–₹400."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement the requested menu item card design: circular food images (or circular placeholders), 95–110px diameter with a 3px border and subtle shadow; a veg/non-veg indicator (small square containing a colored dot) placed at the top-left of the image; generous padding and spacing (30–40px between items), with subtle dividers by spacing or lines.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Circular image frames for all food photos (signature design element)",
+          "All food images in perfect circles (95px-110px diameter)",
+          "3px border on circles, subtle shadow",
+          "Veg/Non-veg indicator: small square box with circular dot inside",
+          "Generous padding between items (30-40px)",
+          "Each menu item in clean card layout with generous white space"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Every item shows a circular image or circular placeholder at 95–110px with a visible 3px border and subtle shadow.",
+        "Veg indicator uses #16A34A; Non-veg indicator uses #DC2626; indicator is a small square with a dot, positioned top-left of the image area.",
+        "Cards have generous whitespace and consistent rhythm; items are separated by ~30–40px spacing (or equivalent)."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add optional item badges and indicators as specified: \"Bestseller\", \"Chef's Special\", and a \"Spicy\" badge using a 🌶️ marker; include spice-level indication where relevant without cluttering the card layout.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Optional badges: \"Bestseller\", \"Spicy\" (🌶️), \"Chef's Special\"",
+          "Spice level indicators where relevant"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Some items across the menu demonstrate each badge type (Bestseller, Chef's Special, Spicy 🌶️).",
+        "Badges are visually consistent, small, and do not reduce readability of name/price/description on mobile."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build the multi-page “digital book” interaction: each menu section is a page with horizontal slide transitions between pages; include subtle animations (fade/slide-up) for content on page entry and smooth scrolling within a page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5",
+          "msg-6"
+        ],
+        "quotes": [
+          "no i want multi page like an actual menu like sliding to next page with some animations",
+          "yes it should look like a digital book"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Switching between sections animates with a smooth horizontal slide (booklet-like), not an abrupt jump.",
+        "Within a page, content reveals use subtle fade-in/slide-up animations and does not feel distracting.",
+        "Scrolling inside a section page is smooth and remains stable during page transitions."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Provide compact navigation controls that allow users to move between section pages without covering the entire menu (e.g., small next/prev controls and/or a compact pager). Navigation must be usable on small screens and visually minimal.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "yes it should be available to navigate but it should be a bit small it should not cover the enitire menu"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation controls are always discoverable but occupy minimal screen real estate and do not block key content.",
+        "Users can navigate forward/back between pages with taps; controls have accessible touch targets on mobile.",
+        "Current section/page is indicated (e.g., dots or small label) without a large overlay."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Use high-quality food photography via direct Unsplash image URLs optimized for fast loading (include width/height and crop params like ?w=400&h=400&fit=crop) while ensuring circular cropping looks good; fall back to a tasteful placeholder when an image is missing.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "High-quality food photography (use Unsplash)",
+          "Optimized images (recommend Unsplash URLs with ?w=400&h=400&fit=crop)",
+          "Circular food image (or empty circle placeholder)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Menu items display images from Unsplash URLs that include optimization parameters (w/h/fit crop).",
+        "If an image fails to load or is not provided, a visually consistent circular placeholder is shown.",
+        "The page remains performant and visually stable (no layout shift when images load)."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Add a minimal header and footer consistent with the theme: header includes cafe name + tagline; footer includes a small note like “Freshly made with love” or “Scan to order.” Keep the header minimal; sticky behavior is optional but must remain unobtrusive if implemented.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "FINAL TOUCHES: - Header: Cafe name + tagline",
+          "Footer: Small text like \"Freshly made with love\" or \"Scan to order\"",
+          "Sticky header optional but keep it minimal"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header shows cafe name and tagline and does not dominate the viewport on mobile.",
+        "Footer shows a short, tasteful line consistent with the premium tone.",
+        "If the header is sticky, it remains minimal and does not overlap core content during scroll or page transitions."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Ensure accessibility and mobile quality: semantic structure for headings/sections, readable contrast, no tiny fonts, no horizontal scroll, and motion that respects users who prefer reduced motion.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Semantic HTML for accessibility",
+          "Works perfectly on all mobile devices",
+          "No horizontal scrolling",
+          "Avoid: Tiny unreadable fonts",
+          "Excessive animations that distract"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All sections use a clear heading hierarchy and accessible labels for navigation controls.",
+        "On 375–428px widths, there is no horizontal scrolling and text remains readable.",
+        "Animations are subtle and a reduced-motion preference disables or significantly reduces motion effects."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend must be implemented using the platform’s React + TypeScript + Tailwind CSS stack (no single-file pure HTML/CSS output).",
+    "Do not edit files under frontend/src/components/ui or any other immutablePaths listed in SYSTEM_CONTEXT; only compose them.",
+    "Backend must remain single-actor if any backend code is added; no external databases or third-party auth providers (Internet Identity only).",
+    "Use English for any user-facing text."
+  ],
+  "nonGoals": [
+    "Online ordering, payments, or checkout flows.",
+    "Admin CMS to edit menu items.",
+    "Real-time features (WebSockets/chat/notifications).",
+    "Third-party authentication beyond Internet Identity.",
+    "Storing menu data in an external database or calling external APIs beyond loading public image URLs."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

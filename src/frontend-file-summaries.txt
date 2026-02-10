@@ -1,0 +1,19 @@
+{
+  "frontend/index.html": "HTML entry point with Google Fonts (Cormorant Garamond serif and DM Sans sans-serif) and updated title for the Indian cafe menu.",
+  "frontend/src/index.css": "Global styles with warm neutral OKLCH color system, saffron orange accent (#D97706), custom animations (fade, slide), typography setup, and reduced-motion support.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with custom color tokens, font families (heading/body), box shadows, and mobile-first container settings.",
+  "frontend/src/App.tsx": "Main app component that renders the complete menu experience with header, digital book menu, and footer within the app shell.",
+  "frontend/src/components/layout/AppShell.tsx": "Layout wrapper that enforces mobile-first max-width (428px), prevents horizontal scroll, and centers content.",
+  "frontend/src/components/brand/BrandHeader.tsx": "Sticky minimal header displaying cafe name and tagline with warm styling and backdrop blur.",
+  "frontend/src/components/brand/BrandFooter.tsx": "Footer component with premium note and caffeine.ai attribution with heart icon.",
+  "frontend/src/components/menu/MenuBook.tsx": "Digital book container managing page state, horizontal slide transitions, and navigation between menu sections.",
+  "frontend/src/components/menu/MenuSectionPage.tsx": "Individual menu section page displaying section title, description, and list of menu items with reveal animations.",
+  "frontend/src/components/menu/MenuItemCard.tsx": "Card component for each menu item with circular image, veg/non-veg indicator, badges, name, price, and description.",
+  "frontend/src/components/menu/VegNonVegMark.tsx": "Small square indicator with colored dot showing vegetarian (green) or non-vegetarian (red) status.",
+  "frontend/src/components/menu/ItemBadges.tsx": "Badge row component displaying Bestseller, Chef's Special, and spice level indicators with flame icon.",
+  "frontend/src/components/menu/MenuPager.tsx": "Compact navigation controls with prev/next buttons, page indicator dots, and current section name display.",
+  "frontend/src/components/media/CircularImage.tsx": "Circular image component with 3px border, shadow, loading state, error handling, and placeholder fallback.",
+  "frontend/src/components/motion/RevealOnEnter.tsx": "Intersection observer-based reveal animation wrapper with subtle fade and slide-up effects.",
+  "frontend/src/components/motion/usePrefersReducedMotion.ts": "Hook detecting user's reduced-motion preference for accessible animation control.",
+  "frontend/src/features/menu/menuData.ts": "Static menu data defining 7 sections (Hot Beverages, Cold Beverages, Breakfast & Snacks, Street Food, Main Course, Breads, Desserts) with 4 items each, including authentic Indian names, prices in rupees, veg/non-veg status, Unsplash images, badges, and spice levels."
+}

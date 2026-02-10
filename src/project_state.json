@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Premium, production-ready QR code menu website for an Indian cafe with a modern minimalist, warm hospitality aesthetic. Mobile-first (375–428px), circular food images, card-based menu items, high-contrast typography with Google Fonts, and polished micro-interactions. The menu should be a multi-page, digital-book experience where each section is its own horizontally sliding page with compact navigation.",
+  "architectural_notes": [
+    "Mobile-first target width 375–428px; avoid horizontal scrolling.",
+    "Menu is multi-page: one page per section with horizontal slide transitions (digital booklet feel).",
+    "Navigation must be compact/non-intrusive while still allowing page-to-page movement."
+  ],
+  "known_issues": [
+    "Unresolved implementation constraint: user requested pure single-file HTML+CSS, but the assistant indicated the platform may only support React + TypeScript + Tailwind; stack decision not confirmed."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-premium-production-ready-mobile-first-menu-ui-for-an-indian-cafe-matching-the-requested-modern-minimalist-warm-indian-hospitality-aesthetic-inviting-clean-elegant-instagram-worthy-and-avoiding-generic-template-styling",
+      "title": "Implement a premium, production-ready mobile-first menu UI for an Indian cafe, matching the requested modern minimalist, warm Indian hospitality aesthetic (inviting, clean, elegant, Instagram-worthy) and avoiding generic template styling.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-single-coherent-visual-theme-across-the-entire-site-colors-typography-spacing-rhythm-component-styling-using-warm-neutral-backgrounds-cream-beige-off-white-high-contrast-deep-charcoal-black-text-and-exactly-one-accent-color-chosen-from-the-provided-options-use-d97706-saffron-orange-as-the-sole-accent-color",
+      "title": "Apply a single coherent visual theme across the entire site (colors, typography, spacing rhythm, component styling) using warm neutral backgrounds (cream/beige/off-white), high-contrast deep charcoal/black text, and exactly one accent color chosen from the provided options; use #D97706 (saffron orange) as the sole accent color.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-typography-per-spec-import-two-complementary-google-fonts-one-elegant-serif-for-headings-one-clean-sans-serif-for-body-and-enforce-a-clear-hierarchy-for-section-titles-item-names-prices-and-descriptions",
+      "title": "Implement typography per spec: import two complementary Google Fonts (one elegant serif for headings; one clean sans-serif for body) and enforce a clear hierarchy for section titles, item names, prices, and descriptions.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-menu-content-structure-with-these-sections-as-separate-pages-hot-beverages-cold-beverages-breakfast-snacks-street-food-main-course-breads-and-desserts-desserts-included-each-section-must-include-at-least-3-4-realistic-items-with-authentic-indian-names-vegetarian-friendly-majority-and-pricing-in-30-400",
+      "title": "Create the menu content structure with these sections as separate pages: Hot Beverages, Cold Beverages, Breakfast & Snacks, Street Food, Main Course, Breads, and Desserts (desserts included). Each section must include at least 3–4 realistic items with authentic Indian names, vegetarian-friendly majority, and pricing in ₹30–₹400.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-requested-menu-item-card-design-circular-food-images-or-circular-placeholders-95-110px-diameter-with-a-3px-border-and-subtle-shadow-a-veg-non-veg-indicator-small-square-containing-a-colored-dot-placed-at-the-top-left-of-the-image-generous-padding-and-spacing-30-40px-between-items-with-subtle-dividers-by-spacing-or-lines",
+      "title": "Implement the requested menu item card design: circular food images (or circular placeholders), 95–110px diameter with a 3px border and subtle shadow; a veg/non-veg indicator (small square containing a colored dot) placed at the top-left of the image; generous padding and spacing (30–40px between items), with subtle dividers by spacing or lines.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-optional-item-badges-and-indicators-as-specified-bestseller-chef-s-special-and-a-spicy-badge-using-a-marker-include-spice-level-indication-where-relevant-without-cluttering-the-card-layout",
+      "title": "Add optional item badges and indicators as specified: \"Bestseller\", \"Chef's Special\", and a \"Spicy\" badge using a 🌶️ marker; include spice-level indication where relevant without cluttering the card layout.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-multi-page-digital-book-interaction-each-menu-section-is-a-page-with-horizontal-slide-transitions-between-pages-include-subtle-animations-fade-slide-up-for-content-on-page-entry-and-smooth-scrolling-within-a-page",
+      "title": "Build the multi-page “digital book” interaction: each menu section is a page with horizontal slide transitions between pages; include subtle animations (fade/slide-up) for content on page entry and smooth scrolling within a page.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-compact-navigation-controls-that-allow-users-to-move-between-section-pages-without-covering-the-entire-menu-e-g-small-next-prev-controls-and-or-a-compact-pager-navigation-must-be-usable-on-small-screens-and-visually-minimal",
+      "title": "Provide compact navigation controls that allow users to move between section pages without covering the entire menu (e.g., small next/prev controls and/or a compact pager). Navigation must be usable on small screens and visually minimal.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-high-quality-food-photography-via-direct-unsplash-image-urls-optimized-for-fast-loading-include-width-height-and-crop-params-like-w-400-h-400-fit-crop-while-ensuring-circular-cropping-looks-good-fall-back-to-a-tasteful-placeholder-when-an-image-is-missing",
+      "title": "Use high-quality food photography via direct Unsplash image URLs optimized for fast loading (include width/height and crop params like ?w=400&h=400&fit=crop) while ensuring circular cropping looks good; fall back to a tasteful placeholder when an image is missing.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-minimal-header-and-footer-consistent-with-the-theme-header-includes-cafe-name-tagline-footer-includes-a-small-note-like-freshly-made-with-love-or-scan-to-order-keep-the-header-minimal-sticky-behavior-is-optional-but-must-remain-unobtrusive-if-implemented",
+      "title": "Add a minimal header and footer consistent with the theme: header includes cafe name + tagline; footer includes a small note like “Freshly made with love” or “Scan to order.” Keep the header minimal; sticky behavior is optional but must remain unobtrusive if implemented.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-accessibility-and-mobile-quality-semantic-structure-for-headings-sections-readable-contrast-no-tiny-fonts-no-horizontal-scroll-and-motion-that-respects-users-who-prefer-reduced-motion",
+      "title": "Ensure accessibility and mobile quality: semantic structure for headings/sections, readable contrast, no tiny fonts, no horizontal scroll, and motion that respects users who prefer reduced motion.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a premium mobile-first Indian cafe QR menu website with modern minimalist warm aesthetic, circular food images, card layout, sectioned menu content, and polished typography/colors.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement multi-page digital-book style menu: each section as its own page with horizontal sliding transitions/animations.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add compact on-screen navigation controls (small, non-intrusive) for moving between section pages (not covering the entire menu).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Premium Indian Cafe QR Menu — Mobile-First Digital Book with Sliding Section Pages",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

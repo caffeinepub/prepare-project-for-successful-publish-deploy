@@ -1,0 +1,316 @@
+export interface MenuItem {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  isVeg: boolean;
+  image?: string;
+  badges?: string[];
+  spiceLevel?: number; // 1: Mild, 2: Medium, 3: Hot
+}
+
+export interface MenuSection {
+  id: string;
+  title: string;
+  description?: string;
+  items: MenuItem[];
+}
+
+export const menuSections: MenuSection[] = [
+  {
+    id: 'hot-beverages',
+    title: 'Hot Beverages',
+    description: 'Warm your soul with our aromatic brews',
+    items: [
+      {
+        id: 'masala-chai',
+        name: 'Masala Chai',
+        description: 'Traditional Indian spiced tea with cardamom, ginger, and cloves',
+        price: 40,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=400&h=400&fit=crop',
+        badges: ['Bestseller'],
+      },
+      {
+        id: 'filter-coffee',
+        name: 'Filter Coffee',
+        description: 'South Indian style strong coffee with frothy milk',
+        price: 50,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400&h=400&fit=crop',
+        badges: ['Chef\'s Special'],
+      },
+      {
+        id: 'adrak-chai',
+        name: 'Adrak Chai',
+        description: 'Ginger-infused tea perfect for digestion and warmth',
+        price: 45,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1597318130878-aa1daa41f216?w=400&h=400&fit=crop',
+      },
+      {
+        id: 'cappuccino',
+        name: 'Cappuccino',
+        description: 'Classic Italian coffee with steamed milk foam',
+        price: 80,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop',
+      },
+    ],
+  },
+  {
+    id: 'cold-beverages',
+    title: 'Cold Beverages',
+    description: 'Refreshing drinks to beat the heat',
+    items: [
+      {
+        id: 'mango-lassi',
+        name: 'Mango Lassi',
+        description: 'Creamy yogurt drink blended with sweet Alphonso mangoes',
+        price: 90,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400&h=400&fit=crop',
+        badges: ['Bestseller'],
+      },
+      {
+        id: 'rose-sharbat',
+        name: 'Rose Sharbat',
+        description: 'Chilled rose-flavored drink with a hint of cardamom',
+        price: 70,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=400&fit=crop',
+      },
+      {
+        id: 'fresh-lime-soda',
+        name: 'Fresh Lime Soda',
+        description: 'Tangy lime juice with soda, salt, and black pepper',
+        price: 60,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&h=400&fit=crop',
+      },
+      {
+        id: 'badam-milk',
+        name: 'Badam Milk',
+        description: 'Chilled almond milk with saffron and cardamom',
+        price: 100,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=400&fit=crop',
+        badges: ['Chef\'s Special'],
+      },
+    ],
+  },
+  {
+    id: 'breakfast-snacks',
+    title: 'Breakfast & Snacks',
+    description: 'Light bites to start your day',
+    items: [
+      {
+        id: 'samosa',
+        name: 'Samosa (2 pcs)',
+        description: 'Crispy pastry filled with spiced potatoes and peas',
+        price: 40,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=400&fit=crop',
+        badges: ['Bestseller'],
+        spiceLevel: 1,
+      },
+      {
+        id: 'vada-pav',
+        name: 'Vada Pav',
+        description: 'Mumbai\'s iconic spiced potato fritter in soft bun',
+        price: 35,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?w=400&h=400&fit=crop',
+        spiceLevel: 2,
+      },
+      {
+        id: 'poha',
+        name: 'Poha',
+        description: 'Flattened rice with peanuts, curry leaves, and lemon',
+        price: 60,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=400&fit=crop',
+        spiceLevel: 1,
+      },
+      {
+        id: 'upma',
+        name: 'Upma',
+        description: 'Savory semolina porridge with vegetables and spices',
+        price: 70,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=400&fit=crop',
+      },
+    ],
+  },
+  {
+    id: 'street-food',
+    title: 'Street Food',
+    description: 'Authentic Indian street flavors',
+    items: [
+      {
+        id: 'pav-bhaji',
+        name: 'Pav Bhaji',
+        description: 'Spiced mashed vegetables served with buttered bread rolls',
+        price: 120,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=400&fit=crop',
+        badges: ['Bestseller'],
+        spiceLevel: 2,
+      },
+      {
+        id: 'masala-dosa',
+        name: 'Masala Dosa',
+        description: 'Crispy rice crepe filled with spiced potato masala',
+        price: 90,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&h=400&fit=crop',
+        badges: ['Chef\'s Special'],
+      },
+      {
+        id: 'pani-puri',
+        name: 'Pani Puri (6 pcs)',
+        description: 'Crispy puris filled with tangy tamarind water and chickpeas',
+        price: 50,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1593560704563-f176a2eb61db?w=400&h=400&fit=crop',
+        spiceLevel: 2,
+      },
+      {
+        id: 'bhel-puri',
+        name: 'Bhel Puri',
+        description: 'Puffed rice mixed with vegetables, chutneys, and sev',
+        price: 60,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1606491956391-1a4c2e0d0a2e?w=400&h=400&fit=crop',
+        spiceLevel: 1,
+      },
+    ],
+  },
+  {
+    id: 'main-course',
+    title: 'Main Course',
+    description: 'Hearty meals for your appetite',
+    items: [
+      {
+        id: 'paneer-butter-masala',
+        name: 'Paneer Butter Masala',
+        description: 'Cottage cheese in rich tomato and cashew gravy',
+        price: 180,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&h=400&fit=crop',
+        badges: ['Bestseller'],
+        spiceLevel: 1,
+      },
+      {
+        id: 'dal-tadka',
+        name: 'Dal Tadka',
+        description: 'Yellow lentils tempered with cumin and garlic',
+        price: 140,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=400&fit=crop',
+      },
+      {
+        id: 'veg-biryani',
+        name: 'Vegetable Biryani',
+        description: 'Fragrant basmati rice with mixed vegetables and aromatic spices',
+        price: 160,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&h=400&fit=crop',
+        badges: ['Chef\'s Special'],
+        spiceLevel: 2,
+      },
+      {
+        id: 'chicken-biryani',
+        name: 'Chicken Biryani',
+        description: 'Aromatic rice layered with tender chicken and spices',
+        price: 220,
+        isVeg: false,
+        image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&h=400&fit=crop',
+        badges: ['Bestseller'],
+        spiceLevel: 2,
+      },
+    ],
+  },
+  {
+    id: 'breads',
+    title: 'Breads',
+    description: 'Freshly baked Indian breads',
+    items: [
+      {
+        id: 'butter-naan',
+        name: 'Butter Naan',
+        description: 'Soft leavened bread brushed with butter',
+        price: 40,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1619888312207-e0c5f8a6e3c0?w=400&h=400&fit=crop',
+        badges: ['Bestseller'],
+      },
+      {
+        id: 'garlic-naan',
+        name: 'Garlic Naan',
+        description: 'Naan topped with fresh garlic and coriander',
+        price: 50,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=400&fit=crop',
+      },
+      {
+        id: 'tandoori-roti',
+        name: 'Tandoori Roti',
+        description: 'Whole wheat flatbread baked in tandoor',
+        price: 30,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=400&h=400&fit=crop',
+      },
+      {
+        id: 'aloo-paratha',
+        name: 'Aloo Paratha',
+        description: 'Stuffed flatbread with spiced potato filling',
+        price: 60,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=400&h=400&fit=crop',
+        badges: ['Chef\'s Special'],
+      },
+    ],
+  },
+  {
+    id: 'desserts',
+    title: 'Desserts',
+    description: 'Sweet endings to your meal',
+    items: [
+      {
+        id: 'gulab-jamun',
+        name: 'Gulab Jamun (2 pcs)',
+        description: 'Soft milk dumplings soaked in rose-flavored sugar syrup',
+        price: 60,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=400&h=400&fit=crop',
+        badges: ['Bestseller'],
+      },
+      {
+        id: 'kulfi',
+        name: 'Kulfi',
+        description: 'Traditional Indian ice cream with cardamom and pistachios',
+        price: 70,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=400&fit=crop',
+      },
+      {
+        id: 'rasmalai',
+        name: 'Rasmalai (2 pcs)',
+        description: 'Soft cheese patties in sweetened, thickened milk',
+        price: 80,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&h=400&fit=crop',
+        badges: ['Chef\'s Special'],
+      },
+      {
+        id: 'gajar-halwa',
+        name: 'Gajar Halwa',
+        description: 'Warm carrot pudding with ghee, milk, and nuts',
+        price: 90,
+        isVeg: true,
+        image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=400&fit=crop',
+      },
+    ],
+  },
+];
